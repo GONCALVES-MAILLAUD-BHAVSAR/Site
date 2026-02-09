@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Cold case féérique et préhistorique : Grotte de Châtelperron</title>
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+
+<header>
+  <nav class="navbar">
+    <div class="logo">Châtelperron</div>
+
+    <ul class="menu">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="about.html">À propos</a></li>
+
+      <li class="dropdown">
+        <a href="synthese.html">Le cold case</a>
+        <ul class="submenu">
+          <li><a href="synthese.html#contexte">Contexte</a></li>
+          <li><a href="synthese.html#decouvertes">Découvertes</a></li>
+          <li><a href="synthese.html#debats">Débats scientifiques</a></li>
+        </ul>
+      </li>
+      <li><a href="carte.html">Carte interactive</a></li>
+      <li><a href="recherche.html">Recherche documentaire</a></li>
+      <li><a href="sources.html">Sources</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section id="contexte" class="page-section">
+  <div class="container">
+    <h1 class="pioche-title">
+      <span class="section-icon bone">⛏️</span>
+      Contexte archéologique
+      <span class="section-icon bone">⛏️</span>
+    </h1>
+
+    <p>
+      blablabla
+    </p>
+
+    <div class="artifact-container">
+      <div class="artifact-flex">
+        <div class="scale-wrapper">
+          <div class="scale-bar"></div>
+          <div class="scale-label">0</div>
+          <div class="scale-label">5 cm</div>
+          <div class="scale-label">10 cm</div>
+        </div>
+
+        <svg viewBox="0 0 120 400" width="140" height="400" class="chatelperronian-point" xmlns="http://www.w3.org/2000/svg">
+          <path d="M60 10 C25 80, 25 150, 40 390 L80 390 C85 250, 95 80, 60 10 Z" fill="#3b3b3b" stroke="#d4af37" stroke-width="2" />
+          
+          <g class="retouches">
+            <path class="retouche-early" d="M35 100 L45 110 M32 140 L42 150" stroke="#111" />
+            <path class="retouche-mid" d="M30 180 L40 190 M28 220 L38 230" stroke="#111" />
+            <path class="retouche-final" d="M30 260 L40 270 M35 300 L45 310 M45 350 L55 360" stroke="#111" />
+          </g>
+        </svg>
+      </div>
+
+      <p id="artifact-caption">Pointe châtelperronienne achevée.</p>
+      
+      <input type="range" id="retouchLevel" min="1" max="3" step="1" value="3" />
+    </div>
+  </div>
+</section>
+
+
+
+
+<section id="decouvertes" class="page-section">
+  <div class="container">
+
+    <h1 class="bone-title">
+      <span class="bone bone-left">🦴</span>
+      Découvertes
+      <span class="bone bone-right">🦴</span>
+    </h1>
+
+    <p>blablabla</p>
+
+  </div>
+</section>
+
+
+<section id="debats" class="page-section">
+  <div class="container">
+    
+    <h1 class="book-title">
+      <span class="section-icon bone">📖</span>
+      Débats scientifiques
+      <span class="section-icon bone">📖</span>
+    </h1>
+
+    <p>blablabla</p>
+
+  </div>
+</section>
+
+
+<section class="page-section sources-section">
+  <div class="container">
+    <h2>Sources numériques</h2>
+
+    <ul class="sources-list">
+      <li>
+        INRAP – <em>Le Châtelperronien</em>,  
+        <a href="https://www.inrap.fr" target="_blank">https://www.inrap.fr</a><br>
+        <span class="source-comment">
+          Article de synthèse institutionnel permettant de contextualiser
+          l’industrie châtelperronienne et les débats scientifiques associés.
+        </span>
+      </li>
+
+      <li>
+        Article Persée – Auteur, « Titre de l’article », année.<br>
+        <span class="source-comment">
+          Source académique essentielle pour comprendre les enjeux méthodologiques
+          et chronologiques du site de Châtelperron.
+        </span>
+      </li>
+    </ul>
+
+    <p class="sources-link">
+      Webographie complète disponible sur la page  
+      <a href="sources.html">Sources</a>.
+    </p>
+  </div>
+</section>
+
+
+<footer>
+  <p>Licence 2 Archéologie – Paris 1 Panthéon-Sorbonne</p>
+</footer>
+
+<script src="js/slider.js"></script>
+</body>
+</html>

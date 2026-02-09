@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Cold case féérique et préhistorique : Grotte de Châtelperron</title>
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+ <div id="page-transition-overlay"></div>
+
+<header>
+  <nav class="navbar">
+    <div class="logo">Châtelperron</div>
+
+    <ul class="menu">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="about.html">À propos</a></li>
+
+      <li class="dropdown">
+        <a href="synthese.html">Le cold case</a>
+        <ul class="submenu">
+          <li><a href="synthese.html#contexte">Contexte</a></li>
+          <li><a href="synthese.html#decouvertes">Découvertes</a></li>
+          <li><a href="synthese.html#debats">Débats scientifiques</a></li>
+        </ul>
+      </li>
+      <li><a href="carte.html">Carte interactive</a></li>
+      <li><a href="recherche.html">Recherche documentaire</a></li>
+      <li><a href="sources.html">Sources</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="sources">
+  <h1>Webographie</h1>
+
+  <ul>
+    <li>
+      Titre de la source – lien  
+      <br>
+      <em>Commentaire webographique</em>
+    </li>
+  </ul>
+</section>
+
+
+<footer>
+  <p>Licence 2 Archéologie – Paris 1 Panthéon-Sorbonne</p>
+</footer>
+
+<script src="js/slider.js"></script>
+
+<!-- BULLE IA ARCHÉO -->
+<div id="archaeo-ai">
+
+  <button id="ai-toggle" aria-label="Ouvrir l'assistant archéologique">
+    🧠
+  </button>
+
+  <div id="ai-panel">
+    <div class="ai-header">
+      <strong>Assistant archéologique</strong>
+      <span class="ai-subtitle">Grotte de Châtelperron</span>
+    </div>
+
+    <div class="ai-content">
+
+      <div class="ai-messages" id="ai-messages">
+        <div class="ai-message ai-bot">
+              Bonjour. Je suis l’assistant scientifique du site de Châtelperron.
+        </div>
+      </div>
+
+      <form id="ai-form">
+        <input
+          type="text"
+          id="ai-input"
+          placeholder="Posez une question archéologique…"
+          autocomplete="off"
+        />
+      </form>
+
+    
+
+    </div>
+    
+      <div class="ai-suggestions" id="ai-suggestions">
+        <small>Expertise rapide :</small>
+        <div class="suggestions-list">
+         <button type="button" onclick="askAI('Qui est l\'auteur du Châtelperronien ?')">Auteur ?</button>
+         <button type="button" onclick="askAI('Parle-moi du mélange des couches')">Stratigraphie</button>
+         <button type="button" onclick="askAI('C\'est quoi une pointe de Châtelperron ?')">La Pointe</button>
+        </div>
+      </div>    
+  </div>
+
+</div>
+
+</body>
+</html>
