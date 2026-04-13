@@ -1,0 +1,2180 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'sans-serif';
+}
+
+body {
+  background-color: #111;
+  color: #f5f5f5;
+}
+
+
+/* NAVIGATION */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  position: fixed;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  align-items: center;
+}
+
+.menu a {
+  font-size: 18px; 
+}
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: white;
+}
+
+.dropdown:hover .submenu {
+  display: block;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  background: #232323;
+  list-style: none;
+  padding: 10px;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+              url('../images/terre-de-legende-chatelperron-chateau-et-site-prehistorique-_4447324.jpeg') no-repeat center center/cover;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+}
+
+
+.subtitle {
+  font-size: 1.5rem;
+  font-style: italic;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+
+.btn-main {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  background-color: rgba(0, 0, 0, 0.7); /* Fond noir semi-transparent */
+  color: white;                        /* Texte blanc */
+  text-decoration: none;
+  padding: 15px 30px;
+  font-weight: bold;
+  border: 2px solid white;             /* Bordure blanche fine */
+  border-radius: 4px; 
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+/* Effet au survol (quand on passe la souris) */
+.btn-main:hover {
+  background-color: white;             /* Le fond devient blanc */
+  color: black;                        /* Le texte devient noir */
+  transform: translateY(-3px);
+}
+
+/* S'assurer que l'icône change aussi de couleur au survol */
+.btn-main:hover i {
+  color: black;
+}
+
+.btn-main i {
+  margin-right: 10px;
+  font-size: 1.1em;
+  color: white; /* Icône blanche pour aller avec le texte */
+}
+
+/* SECTIONS */
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 80px;
+  gap: 30px;
+}
+
+.feature-card {
+  padding: 40px;
+  background: #171717;
+  transition: transform 0.3s;
+}
+
+.feature-link {
+  text-decoration: none; /* Enlève le soulignement */
+  color: inherit;       /* Garde les couleurs que tu as déjà définies */
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.feature-link:hover .feature-card {
+  transform: translateY(-10px); /* Petit effet de survol sympa */
+  border-color: #d4af37;        /* Rappel de ton doré */
+  box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+}
+
+/* SLIDERS */
+
+.slider {
+  position: relative;
+  height: 300px;
+  margin: 50px;
+}
+
+.slide {
+  display: none;
+  text-align: center;
+  padding: 100px;
+  background: #222;
+}
+
+.slide.active {
+  display: block;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  background: none;
+  color: white;
+  border: none;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+/* PAGES DE CONTENU (About, Recherche, etc.) */
+.page-content {
+  padding-top: 120px; 
+  max-width: 900px;   
+  margin: 0 auto;     
+  padding-left: 20px;
+  padding-right: 20px;
+  min-height: calc(100vh - 180px); 
+}
+
+.page-content h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.page-content h2 {
+  font-size: 1.8em;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  color: #d4af37; 
+}
+
+.page-content p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* PAGES DE SOURCES */
+.sources {
+  padding-top: 120px; 
+  max-width: 900px;   
+  margin: 0 auto;     
+  padding-left: 20px;
+  padding-right: 20px;
+  min-height: calc(100vh - 160px); 
+}
+
+.sources h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #5f76e9;
+}
+
+.sources p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+
+
+/* FOOTER */
+
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #000;
+  width: 100%;
+  margin-top: auto; 
+}
+
+/* ANIMATION */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Style pour les pages de texte (Synthèse, Recherche, etc.) */
+.page-section {
+  padding: 100px 20px; /* Grand espace en haut et en bas */
+  min-height: 400px;   /* Donne de la hauteur à chaque bloc */
+}
+
+/* La toute première section doit descendre plus bas pour ne pas être sous la navbar */
+#contexte {
+  padding-top: 150px; 
+}
+
+/* Conteneur pour centrer le texte et qu'il ne soit pas trop large */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.page-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  border-left: 5px solid #d4af37; /* Une petite barre dorée décorative */
+  padding-left: 20px;
+}
+
+.page-section p {
+  line-height: 1.8;
+  font-size: 1.1rem;
+  color: #ccc;
+}
+
+/* STYLE SPÉCIFIQUE RECHERCHE */
+.research-page {
+  padding-bottom: 80px;
+  height: auto;
+}
+
+.research-step {
+  display: flex;
+  gap: 30px;
+  background: #1c1c1c;
+  margin-bottom: 20px;
+  padding: 30px;
+  border-left: 2px solid #d4af37; 
+  transition: 0.3s;
+  height: auto;
+}
+
+.research-step:hover {
+  background: #252525;
+  transform: translateX(10px);
+}
+
+.step-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #d4af37;
+  opacity: 0.5;
+}
+
+.step-text h2 {
+  margin-top: 0; /* Annule la marge du haut pour aligner avec le chiffre */
+  color: white;
+  font-size: 1.4rem;
+}
+
+.step-text p {
+  margin-bottom: 0;
+  color: #bbb;
+}
+
+/* Espacement horizontal entre les portraits */
+.authors-grid {
+  display: flex;
+  justify-content: center;
+  gap: 200px; /* Espace horizontal entre les colonnes d'auteurs */
+  flex-wrap: wrap;
+  margin-top: 100px; /* Espace sous le titre "Les auteur·ices" */
+}
+
+/* S'assurer que le nom est bien au-dessus */
+.author-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.author-name {
+  margin-bottom: 20px;
+  z-index: 5;
+}
+
+/* On garde le cercle propre */
+.author-card {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid #d4af37;
+  overflow: hidden;
+  position: relative;
+  z-index: 2; /* Pour rester sous les bulles si besoin */
+}
+
+/* L'image à l'intérieur : s'adapte sans se déformer */
+.author-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Remplit le cercle sans écraser le visage */
+  display: block;
+}
+
+
+/* Style des bulles qui flottent */
+.info-bubble {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 150px;
+  margin-left: -75px; margin-top: -20px;
+  background: rgba(15, 15, 15, 0.98);
+  border: 1px solid #d4af37;
+  color: #d4af37;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  text-align: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 20;
+}
+
+/* Optionnel : changer la couleur au survol d'une bulle active */
+.author-wrapper.active .info-bubble:hover {
+  background: #d4af37;
+  color: #000;
+}
+
+
+/* --- CONFIGURATION UNIQUE PAR AUTEUR --- */
+
+/* LORENZO (Déploiement horizontal) */
+.lorenzo-style.active .bubble-1 { transform: translate(-160px, 0) scale(1); opacity: 1; }
+.lorenzo-style.active .bubble-2 { transform: translate(160px, 0) scale(1); opacity: 1; }
+.lorenzo-style.active .bubble-3 { transform: translate(0, 130px) scale(1); opacity: 1; }
+
+/* LUIZA (Vers la gauche pour éviter le centre) */
+.luiza-style.active .bubble-1 { transform: translate(-170px, -40px) scale(1); opacity: 1; }
+.luiza-style.active .bubble-2 { transform: translate(-170px, 40px) scale(1); opacity: 1; }
+.luiza-style.active .bubble-3 { transform: translate(-80px, 120px) scale(1); opacity: 1; }
+
+/* DHRUV (Vers la droite pour éviter le centre) */
+.dhruv-style.active .bubble-1 { transform: translate(170px, -40px) scale(1); opacity: 1; }
+.dhruv-style.active .bubble-2 { transform: translate(170px, 40px) scale(1); opacity: 1; }
+.dhruv-style.active .bubble-3 { transform: translate(80px, 120px) scale(1); opacity: 1; }
+
+/* On enlève l'ancien overlay noir */
+.author-overlay {
+  display: none;
+}
+
+/* --- Accordéon Contexte --- */
+.context-accordion {
+  max-width: 800px;
+  margin: 20px auto 10px auto;
+  background: #1c1c1c;
+  border: 1px solid #d4af37;
+  border-radius: 8px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: background 0.3s;
+}
+
+.context-header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  color: #d4af37;
+}
+
+.context-body {
+  max-height: 0;
+  opacity: 0;
+  padding: 0 20px;
+  transition: all 0.5s ease;
+  color: #ccc;
+  text-align: left;
+}
+
+.context-accordion.open .context-body {
+  max-height: 200px;
+  opacity: 1;
+  padding-bottom: 20px;
+}
+
+.context-accordion.open .arrow-icon {
+  transform: rotate(180deg);
+}
+
+.arrow-icon {
+  transition: transform 0.3s;
+  font-size: 0.8rem;
+}
+
+/* ===== PAGE CARTE INTERACTIVE ===== */
+
+.map-section {
+  margin: 120px auto;
+  text-align: center;
+}
+
+#map {
+  height: 450px;
+  max-width: 900px;
+  margin: 40px auto;
+  border-radius: 12px;
+  border: 2px solid #d4af37;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+}
+
+.map-caption {
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+/* SOURCES NUMÉRIQUES */
+
+.sources-section {
+  background: #0f0f0f;
+  border-top: 2px solid #d4af37;
+}
+
+.sources-section h2 {
+  color: #d4af37;
+  margin-bottom: 20px;
+}
+
+.sources-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sources-list li {
+  margin-bottom: 20px;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.sources-list a {
+  color: #d4af37;
+  text-decoration: none;
+}
+
+.sources-list a:hover {
+  text-decoration: underline;
+}
+
+.source-comment {
+  display: block;
+  font-size: 0.95rem;
+  color: #aaa;
+  margin-top: 5px;
+}
+
+.sources-link {
+  margin-top: 30px;
+  font-style: italic;
+}
+
+.step-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.4s ease;
+  opacity: 0;
+}
+
+.research-step.active .step-content {
+  max-height: 9000px;
+  opacity: 1;
+  margin-top: 15px;
+}
+
+.page-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== TITRE AVEC OS ANIMÉS ===== */
+
+.bone {
+  display: inline-block;
+  margin: 0 15px;
+  width: 32px;
+  height: auto;
+  transform-origin: center;
+}
+
+/* Animation */
+.bone.animate {
+  animation: boneSwing 0.6s ease-in-out;
+}
+
+@keyframes boneSwing {
+  0% {
+    transform: rotate(0deg) translateX(0);
+  }
+  25% {
+    transform: rotate(-8deg) translateX(-2px);
+  }
+  50% {
+    transform: rotate(8deg) translateX(2px);
+  }
+  75% {
+    transform: rotate(-4deg) translateX(-1px);
+  }
+  100% {
+    transform: rotate(0deg) translateX(0);
+  }
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 2.5rem;
+  border-left: 5px solid #d4af37;
+  padding-left: 20px;
+}
+
+.section-title span {
+  width: 32px;
+  opacity: 0.9;
+}
+
+.bone {
+  opacity: 0.75;
+}
+
+.bone.animate {
+  opacity: 1;
+}
+
+.section-title-with-line {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.section-title-with-line h1 {
+  margin: 0;
+}
+
+.section-icon {
+  font-size: 1.8rem;
+  display: inline-block;
+}
+
+/* ===== OS QUI TOMBE SUR LA CARTE ===== */
+
+.research-step {
+  position: relative;
+  overflow: hidden;
+}
+
+.falling-bone {
+  position: absolute;
+  top: -40px;
+  left: 20px;
+  font-size: 1.8rem;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Déclenchement */
+.research-step.impact .falling-bone {
+  opacity: 1;
+  animation: boneFall 0.6s ease-out forwards;
+}
+
+/* Chute + rebond */
+@keyframes boneFall {
+  0% {
+    transform: translateY(-40px) rotate(0deg);
+  }
+  60% {
+    transform: translateY(120px) rotate(20deg);
+  }
+  80% {
+    transform: translateY(100px) rotate(-10deg);
+  }
+  100% {
+    transform: translateY(110px) rotate(0deg);
+  }
+}
+
+
+.falling-bone {
+  position: fixed;
+  top: -50px; /* L'os part de derrière la navbar */
+  font-size: 2.2rem;
+  z-index: 9999;
+  pointer-events: none;
+  filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));
+  user-select: none;
+}
+
+@keyframes boneTrajectory {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+  /* Point de collision calculé par le JS */
+  30% {
+    transform: translate(0, var(--collision-y)) rotate(120deg);
+  }
+  /* Chute finale vers le footer selon la trajectoire personnalisée */
+  100% {
+    transform: translate(var(--x-dest), 110vh) rotate(500deg);
+    opacity: 0;
+  }
+}
+
+/* Effet de secousse sur la carte lors de l'impact */
+.research-step.impact {
+  animation: shake 0.2s ease-in-out;
+  border-right: 4px solid #d4af37;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(10px); }
+  100% { transform: translateX(0); }
+}
+
+/* Particules de poussière/roche */
+.dust {
+  position: fixed;
+  width: 4px;
+  height: 4px;
+  background: #d4af37; /* Couleur dorée comme tes titres */
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  animation: dustExplosion 0.6s ease-out forwards;
+}
+
+@keyframes dustExplosion {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    /* Dispersion aléatoire vers le haut et la droite */
+    transform: translate(var(--dx), var(--dy)) scale(0);
+    opacity: 0;
+  }
+}
+
+/* Le conteneur de transition qui couvre tout l'écran */
+#page-transition-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #111; /* Couleur du body */
+  z-index: 10001; /* Au-dessus de la navbar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  transition: opacity 0.8s ease-out;
+}
+
+/* Les os de l'avalanche */
+.avalanche-bone {
+  position: absolute;
+  top: -100px;
+  font-size: 3rem;
+  animation: avalancheFall 1.5s ease-in forwards;
+}
+
+@keyframes avalancheFall {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(120vh) rotate(720deg); opacity: 0; }
+}
+
+/* Cache l'overlay quand l'animation est finie */
+.transition-hidden {
+  opacity: 0;
+}
+
+/* Animation de tremblement de l'écran */
+@keyframes screenShake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  100% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+}
+
+.shaking {
+  animation: screenShake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+/* On s'assure que l'avalanche est bien massive */
+.avalanche-bone {
+  position: fixed; /* Mieux que absolute pour couvrir tout l'écran */
+  top: -100px;
+  z-index: 10002;
+  font-size: 3.5rem;
+  pointer-events: none;
+  animation: avalancheFall 1.2s ease-in forwards;
+}
+
+/* ===== OS QUI TOMBE (ACCUEIL) ===== */
+
+.falling-bone {
+  position: fixed;
+  top: -60px;
+  font-size: 2rem;
+  z-index: 2000;
+  pointer-events: none;
+  animation: boneFall 1.6s ease-in forwards;
+}
+
+@keyframes boneFall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  70% {
+    transform: translateY(60vh) rotate(180deg);
+  }
+  85% {
+    transform: translateY(55vh) rotate(200deg);
+  }
+  100% {
+    transform: translateY(62vh) rotate(220deg);
+    opacity: 0;
+  }
+}
+
+.timeline-section {
+  margin: 120px auto;
+  text-align: center;
+}
+
+.timeline-title {
+  font-size: 2rem;
+  color: #d4af37;
+  margin-bottom: 40px;
+}
+
+.timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.timeline-viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.timeline-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.timeline-slide {
+  flex: 0 0 100%;
+  padding: 60px;
+  background: #1c1c1c;
+  border-top: 3px solid #d4af37;
+  box-sizing: border-box;
+}
+
+
+.timeline-slide.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.timeline-date {
+  display: inline-block;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+  color: #aaa;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.timeline-slide h3 {
+  font-size: 1.6rem;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.timeline-slide p {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+/* Boutons */
+.timeline .prev,
+.timeline .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+
+  background: rgba(0,0,0,0.6);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 8px 14px;
+  border-radius: 50%;
+}
+
+.timeline .prev:hover,
+.timeline .next:hover {
+  opacity: 1;
+}
+
+.timeline .prev {
+  left: -60px;
+}
+
+.timeline .next {
+  right: -60px;
+}
+
+/* --- NOUVEAU STYLE POUR L'INTERACTION ARTEFACT --- */
+
+.artifact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+}
+
+.artifact-interaction-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.scale-wrapper {
+  display: flex;
+  height: 300px; /* Hauteur de référence pour 10cm */
+}
+
+.scale-bar {
+  width: 2px;
+  background-color: white;
+  height: 100%;
+  position: relative;
+}
+
+/* Traits de l'échelle */
+.scale-bar::before, .scale-bar::after {
+  content: "";
+  position: absolute;
+  left: -5px;
+  width: 12px;
+  height: 2px;
+  background: white;
+}
+.scale-bar::before { top: 0; } /* Marqueur 0 */
+.scale-bar::after { bottom: 0; } /* Marqueur 10 */
+
+.scale-markers {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 10px;
+  font-family: monospace;
+}
+
+/* 1. Le Scrubber */
+.soundwave-container {
+  width: 100%;
+  height: 60px; /* Zone d'interaction plus large que la ligne */
+  position: relative;
+  cursor: ew-resize; /* Curseur horizontal */
+  display: flex;
+  align-items: center;
+}
+
+.soundwave-bg, .soundwave-progress {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px; /* La ligne fine */
+  background: rgba(255, 255, 255, 0.2); /* Ligne de fond grise */
+  border-radius: 2px;
+}
+
+.soundwave-progress {
+  width: 0%; /* Commence à gauche */
+  background: #d4af37; /* Couleur dorée */
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+  transition: width 0.1s ease-out; /* Légère fluidité */
+}
+
+.soundwave-handle {
+  position: absolute;
+  left: 0%;
+  width: 12px;
+  height: 12px;
+  background: #d4af37;
+  border-radius: 50%;
+  transform: translate(-50%, 0); /* Centrer sur la ligne */
+  box-shadow: 0 0 15px #d4af37;
+  transition: left 0.1s ease-out;
+  z-index: 2;
+}
+
+/* 2. Visualisation des Silex */
+.artifact-flex {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.flint-visualization {
+  position: relative;
+  width: 140px; /* Taille de tes SVG */
+  height: 400px;
+}
+
+.flint-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.flint-raw {
+  z-index: 1;
+}
+
+.flint-finished {
+  z-index: 2;
+  /* Masque initial : invisible */
+  clip-path: inset(0 0 100% 0); /* Masque par le bas */
+  /* Alternative : clip-path: inset(0 100% 0 0); Masque par la droite */
+  transition: clip-path 0.1s ease-out;
+}
+
+#artifact-caption {
+  font-style: italic;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+/* Conteneur Global */
+#archaeo-ai {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1001;
+}
+
+/* Le Bouton Cerveau (Style Artefact) */
+#ai-toggle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 2px solid #d4af37;
+  background: radial-gradient(circle, #2a2a2a, #111);
+  font-size: 1.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#ai-toggle:hover {
+  transform: scale(1.1) rotate(10deg);
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
+}
+
+/* Le Panneau de discussion */
+#ai-panel {
+  position: absolute;
+  bottom: 85px;
+  right: 0;
+  width: 350px;
+  max-height: 500px;
+  background: rgba(15, 15, 15, 0.95);
+  backdrop-filter: blur(10px); /* Effet verre dépoli */
+  border: 1px solid #d4af37;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 15px 50px rgba(0,0,0,0.8);
+  
+  /* Animation d'apparition */
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  pointer-events: none;
+  transition: all 0.4s ease;
+}
+
+#archaeo-ai.open #ai-panel {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+/* En-tête du panneau */
+.ai-header {
+  background: linear-gradient(to right, #1a1a1a, #d4af3744);
+  padding: 15px;
+  border-bottom: 1px solid #d4af37;
+  text-align: center;
+}
+
+.ai-header strong {
+  color: #d4af37;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+/* Zone des messages */
+.ai-messages {
+  height: 300px;
+  padding: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Bulles de texte */
+.ai-message {
+  max-width: 85%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.ai-bot {
+  align-self: flex-start;
+  background: #222;
+  color: #eee;
+  border-left: 3px solid #d4af37;
+}
+
+.ai-user {
+  align-self: flex-end;
+  background: #d4af37;
+  color: #111;
+  font-weight: bold;
+}
+
+/* Formulaire d'entrée */
+#ai-form {
+  padding: 15px;
+  background: #000;
+  display: flex;
+  gap: 8px;
+}
+
+#ai-input {
+  flex: 1;
+  background: #111;
+  border: 1px solid #333;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 20px;
+  outline: none;
+}
+
+#ai-input:focus {
+  border-color: #d4af37;
+}
+
+
+/* Conteneur des suggestions */
+.ai-suggestions {
+  padding: 10px 20px;
+  background: rgba(212, 175, 55, 0.05); /* Teinte dorée très légère */
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.ai-suggestions small {
+  color: #d4af37;
+  font-size: 0.65rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.suggestions-list {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto; /* Permet de scroller les questions si elles sont longues */
+  padding-bottom: 5px;
+}
+
+.suggestions-list button {
+  background: #1a1a1a;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  color: #eee;
+  padding: 8px 15px;
+  border-radius: 20px; /* Forme de pillule comme ChatGPT */
+  font-size: 0.8rem;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.suggestions-list button:hover {
+  background: #d4af37;
+  color: #111;
+  border-color: #d4af37;
+  transform: translateY(-2px);
+}
+
+/* Positionnement de la carte pour accueillir la bulle */
+.research-step {
+  position: relative; /* Indispensable pour le placement de la bulle */
+  overflow: visible;  /* On autorise la bulle à dépasser un peu si besoin */
+  cursor: pointer; /* Ajoute cette ligne ici */
+  transition: transform 0.2s ease; /* Optionnel : petit effet de zoom au survol */
+}
+
+/* La Bulle à gauche */
+.evidence-bubble {
+  position: absolute;
+  left: -300px; /* Elle dépasse légèrement sur la gauche pour attirer l'oeil */
+  top: 50%;
+  transform: translateY(-50%) translateX(-10px); /* Centrée verticalement */
+  background: rgba(20, 20, 20, 0.95);
+  color: #d4af37; /* Rappel du doré du site */
+  padding: 8px 15px;
+  border: 1px solid #d4af37;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  z-index: 100;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+  
+  /* État invisible */
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+/* Le petit triangle pointant vers la carte */
+.evidence-bubble::after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 6px solid #d4af37;
+}
+
+/* Apparition au survol */
+.research-step:hover .evidence-bubble {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* Effet d'écriture Phoenix Wright */
+.research-step:hover .evidence-bubble span {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: ace-type 0.6s steps(25, end);
+}
+
+@keyframes ace-type {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* Cacher la bulle quand la carte est ouverte */
+.research-step.active .evidence-bubble {
+  display: none;
+}
+
+.research-step.active {
+  cursor: default;
+}
+
+
+.logo, .logo-img {
+    max-width: 45px; 
+    height: auto;     
+    display: block;   
+}
+
+/* Overlay de transition pour la carte */
+#map-transition-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  z-index: 10005;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  transition: opacity 0.8s ease-in-out;
+}
+
+/* La grille de coordonnées */
+.scan-grid {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(212, 175, 55, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 175, 55, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Le faisceau de scan */
+.scan-bar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 4px;
+  background: #d4af37;
+  box-shadow: 0 0 20px #d4af37;
+  animation: scanMove 2s linear infinite;
+}
+
+.scan-text {
+  color: #d4af37;
+  font-family: monospace;
+  font-size: 1.2rem;
+  z-index: 10;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+@keyframes scanMove {
+  0% { top: 0; opacity: 0; }
+  50% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+.hidden-transition {
+  opacity: 0 !important;
+}
+
+@media (max-width: 768px) {
+  /* La barre de navigation passe en colonne ou se simplifie */
+  .navbar {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 0;
+  }
+
+  /* On réduit la taille des titres pour qu'ils ne mangent pas tout l'écran */
+  h1 { font-size: 1.8rem; }
+  
+  /* Les sections prennent toute la largeur */
+  .page-content {
+    padding: 10px;
+  }
+
+  /* La carte doit rester utilisable */
+  #map {
+    height: 300px; /* Plus petit sur mobile pour voir le texte dessous */
+    width: 100%;
+  }
+
+  
+  .author-wrapper:active, .author-wrapper:focus {
+    transform: scale(1.02); /* Effet au toucher plutôt qu'au survol */
+  }
+}
+
+/* --- ADAPTATION MOBILE --- */
+@media (max-width: 768px) {
+  
+  /* 1. La Navigation : On empile les éléments */
+  .navbar {
+    padding: 10px 20px;
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .menu {
+    gap: 10px;
+    flex-wrap: wrap; /* Pour que le menu passe sur 2 lignes si besoin */
+    justify-content: center;
+    padding-top: 10px;
+  }
+
+  /* 2. L'Artéfact (Silex + Échelle) */
+  .artifact-flex {
+    flex-direction: row; /* On garde l'échelle à côté, mais on réduit la taille */
+    gap: 15px;
+    transform: scale(0.8); /* Réduit l'ensemble pour que ça rentre en largeur */
+  }
+
+  .flint-visualization {
+    width: 100px; /* Plus petit sur mobile */
+    height: 300px;
+  }
+
+  .scale-wrapper {
+    height: 250px;
+  }
+
+  /* 3. Le Scrubber (Ligne de son) */
+  .soundwave-container {
+    width: 90%;
+    height: 40px; /* On augmente la zone de contact pour le doigt */
+  }
+
+  /* 4. Textes et titres */
+  .book-title {
+    font-size: 1.5rem;
+  }
+  
+  .container {
+    padding: 0 15px;
+  }
+
+  /* Masquer les icônes flottantes trop encombrantes sur petit écran */
+  .section-icon {
+    display: none;
+  }
+}
+
+/* --- SECTION SOURCES --- */
+.sources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Aligne les cartes auto */
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.source-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-left: 5px solid #d4af37;
+    padding: 20px;
+    display: flex;
+    gap: 15px;
+    transition: all 0.3s ease;
+}
+
+.source-card:hover {
+    background: rgba(212, 175, 55, 0.1);
+    transform: translateY(-5px);
+}
+
+.source-icon {
+    font-size: 2rem;
+    filter: sepia(1) saturate(5); 
+}
+
+.source-content h3 {
+    color: #d4af37;
+    margin-top: 0;
+    font-family: 'Playfair Display', serif; 
+}
+
+.source-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #ffffff !important; 
+    text-decoration: none !important;
+    border: 1px solid #d4af37;
+    padding: 8px 15px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.source-link:hover {
+    background: #d4af37;
+    color: #111 !important;
+}
+
+/* Remplacez ou modifiez ces blocs */
+header {
+    width: 100%;
+    position: relative; /* Changez absolute par relative pour le mobile */
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap; /* Permet au menu de passer sur deux lignes si besoin */
+    justify-content: center;
+    gap: 10px;
+    padding: 0;
+}
+
+nav ul li a {
+    font-size: 14px; /* Réduire un peu la taille pour mobile */
+}
+
+@media (max-width: 768px) {
+    .background-title {
+        font-size: 40px !important; /* On réduit drastiquement la taille */
+        top: 10% !important;
+        opacity: 0.1; /* On le rend plus discret */
+        white-space: normal; /* Permet le retour à la ligne */
+        text-align: center;
+        width: 100%;
+    }
+
+    /* Ajustement des titres principaux */
+    h1 {
+        font-size: 28px !important;
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .author-container {
+        flex-direction: column; /* Empile la photo et le texte */
+        align-items: center;
+        text-align: center;
+    }
+
+    .author-info {
+        margin-left: 0 !important;
+        margin-top: 20px;
+    }
+}
+
+#map {
+    height: 400px; /* Force une hauteur visible */
+    width: 100%;
+}
+
+/* Styles pour le bouton Hamburger */
+.hamburger {
+    display: none; /* Caché sur ordinateur */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger span {
+    width: 30px;
+    height: 3px;
+    background-color: #d4af37; /* Votre couleur dorée */
+    border-radius: 10px;
+}
+
+/* Media Query pour Mobile */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex; /* Visible uniquement sur mobile */
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+
+    nav {
+        display: none; /* On cache le menu de base */
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.95);
+        padding: 20px 0;
+    }
+
+    /* Quand on ajoute la classe .active via JS */
+    nav.active {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+}
+
+.theme-problematique {
+    padding: 10px 20px;
+}
+
+.content-card {
+    background: rgba(255, 255, 255, 0.05); /* Léger contraste */
+    border-left: 4px solid #ccaa00; /* Couleur dorée/archéo pour souligner */
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+.problematic-list li {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* Espace entre les lignes du texte */
+.content-card p {
+    line-height: 1.8; /* Augmente l'espace entre les lignes */
+    margin-bottom: 30px;
+}
+
+/* Espace entre les points de la liste de problématique */
+.problematic-list li {
+    margin-bottom: 20px; /* Espace entre chaque axe de recherche */
+    line-height: 1.8;
+}
+
+.about-section {
+    padding-top: 40px;
+    padding-bottom: 80px; /* Crée un grand espace avant le footer */
+}
+
+/* Si vous voulez spécifiquement décoller la dernière carte */
+.problematic-box {
+    margin-bottom: 60px; 
+}
+
+.content-card {
+    max-width: 900px; /* Évite que les lignes soient trop longues */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px; /* Plus d'espace à l'intérieur du cadre */
+}
+
+.context-section {
+    margin-bottom: 20px; /* Réduit l'espace sous l'accordéon */
+}
+
+.theme-problematique h2:first-child {
+    margin-top: 0;
+}
+
+/* Style pour les illustrations de vulgarisation */
+.illustration-fine {
+    margin: 30px 0;
+    text-align: center;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    padding: 10px;
+    background: #1a1a1a;
+    border-radius: 4px;
+}
+
+.illustration-fine img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 2px;
+}
+
+.illustration-fine figcaption {
+    font-size: 0.85rem;
+    color: #d4af37;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* Mise en valeur des termes techniques */
+strong {
+    color: #d4af37;
+    font-weight: 600;
+}
+
+.info-box {
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px dashed #d4af37;
+    padding: 15px;
+    margin: 20px 0;
+    font-size: 0.95rem;
+    border-radius: 5px;
+}
+
+/* Style spécifique pour les images de découvertes */
+.page-section img {
+    display: block;
+    max-width: 80%;
+    margin: 20px auto;
+    border: 2px solid #333;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+}
+
+.page-section img:hover {
+    transform: scale(1.02);
+}
+
+/* Grille pour comparer les théories scientifiques */
+.theory-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.theory-item {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    border-top: 2px solid #d4af37;
+    border-radius: 5px;
+}
+
+.theory-item strong {
+    display: block;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Carte de conclusion avec un effet de mise en valeur */
+.shadow-gold {
+    border: 1px solid #d4af37;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+    background: linear-gradient(to bottom, rgba(212, 175, 55, 0.05), transparent);
+}
+
+/* Responsive pour mobile */
+@media (max-width: 768px) {
+    .theory-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.sources-category {
+    margin-bottom: 40px;
+}
+
+.sources-category h3 {
+    color: #d4af37;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sources-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.sources-list li {
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 3px solid #d4af37;
+    padding: 15px;
+    margin-bottom: 15px;
+    transition: transform 0.2s ease;
+}
+
+.sources-list li:hover {
+    transform: translateX(10px);
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.source-header {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.source-header a {
+    color: #d4af37;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+.source-comment {
+    display: block;
+    font-size: 0.85rem;
+    color: #aaa;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+/* Espacement global pour le contenu de la recherche */
+.step-content p {
+    line-height: 1.8;      /* Augmente l'espace entre les lignes (standard = 1.2) */
+    margin-bottom: 20px;   /* Espace entre deux paragraphes */
+    text-align: justify;   /* Optionnel : rend les blocs de texte plus "propres" */
+    color: #e0e0e0;        /* Un gris très clair fatigue moins l'œil que le blanc pur */
+}
+
+/* Espacement pour les listes à puces (points critiques) */
+.step-content ul li {
+    line-height: 1.6;
+    margin-bottom: 12px;   /* Espace entre chaque point de la liste */
+    padding-left: 5px;
+}
+
+/* Espacement spécifique pour les titres dans les étapes */
+.step-content h3 {
+    margin-top: 25px;
+    margin-bottom: 15px;
+    color: #d4af37;
+}
+
+/* Dans style.css */
+.info-box {
+    margin-top: 30px;
+    margin-bottom: 50px;       /* Cet espace va forcer la carte à descendre plus bas */
+}
+
+/* Dans style.css */
+.research-step {
+    height: auto !important;   /* Force l'élément à s'adapter à la taille du texte */
+    min-height: 150px;
+    position: relative;
+    display: block;            /* Assure que l'élément se comporte comme un bloc vertical */
+    margin-bottom: 30px;
+}
+
+.game-card {
+  background: #1c1c1c;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-left: 3px solid #d4af37;
+  transition: 0.3s;
+}
+
+.game-card:hover {
+  transform: translateX(10px);
+  background: #252525;
+}
+
+.game-card button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #d4af37;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.game-box {
+  background: #1c1c1c;
+  padding: 20px;
+  margin-top: 20px;
+  border-left: 3px solid #d4af37;
+}
+
+.game-box button {
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  background: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.game-box button:hover {
+  background: #d4af37;
+  color: black;
+}
+
+#layers {
+  list-style: none;
+  padding: 0;
+}
+
+#layers li {
+  padding: 10px;
+  margin: 5px 0;
+  background: #333;
+  cursor: grab;
+}
+
+#explanation {
+  margin-top: 20px;
+  padding: 15px;
+  background: rgba(212, 175, 55, 0.1);
+  border-left: 3px solid #d4af37;
+  line-height: 1.6;
+}
+
+#next-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #d4af37;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#flint-container {
+  position: relative;
+  display: inline-block;
+}
+
+#flint-img {
+  width: 220px;
+}
+
+/* Zones de frappe */
+.hit-zone {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+
+  /* invisible mais détectable */
+  background: rgba(255, 0, 0, 0);
+}
+
+/* DEBUG (optionnel pour voir les zones) */
+/*
+.hit-zone {
+  background: rgba(255, 0, 0, 0.3);
+}
+*/
+
+.hit-zone:hover {
+  transform: scale(1.2);
+}
+
+.zone {
+  fill: transparent;
+  cursor: pointer;
+}
+
+/* DEBUG (afficher zones)
+.zone {
+  fill: rgba(255,0,0,0.3);
+}
+*/
+
+.zone:hover {
+  stroke: #d4af37;
+  stroke-width: 2;
+}
+
+#flint-svg {
+  margin: 20px 0;
+}
+
+#strata-container {
+  width: 200px;
+  margin: 20px auto;
+  border: 2px solid #999;
+}
+
+.layer {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.3s;
+}
+
+.layer:hover {
+  transform: scale(1.05);
+}
+
+/* animation d'apparition */
+.layer {
+  animation: appear 0.5s ease;
+}
+
+@keyframes appear {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+#dig-zone {
+  width: 220px;
+  height: 220px;
+  margin: 20px auto;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #999;
+}
+
+#soil {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #5c4033;
+  transition: height 0.5s;
+}
+
+#artifact {
+  width: 200px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+button {
+  margin: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#artifact polygon {
+  stroke: #aaa;
+  stroke-width: 2;
+  filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));
+}
+
+.image-block {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.image-block img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.legend {
+  font-size: 14px;
+  color: #555;
+  margin-top: 5px;
+  font-style: italic;
+}
+
+.image-block img {
+  max-width: 400px;  /* taille max */
+  width: 100%;       /* s’adapte */
+  height: auto;      /* garde les proportions */
+}
+
+#image-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  text-align: center;
+}
+
+#modal-img {
+  max-width: 90%;
+  max-height: 80%;
+  margin-top: 5%;
+  border-radius: 8px;
+}
+
+#close-modal {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+#modal-caption {
+  color: white;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+/* Styles spécifiques pour le Glossaire */
+.content-card h2 i {
+  margin-right: 15px;
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+.content-card strong {
+  color: #ffcc00;
+}
+
+/* Effet de survol sur les cartes du glossaire pour l'ergonomie */
+.content-card.shadow-gold {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content-card.shadow-gold:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(255, 204, 0, 0.2);
+}
+
+/* Style pour le lien actif dans le menu */
+.menu li a.active {
+  border-bottom: 2px solid #ffcc00;
+  color: #ffcc00;
+}
+
+footer {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+/* --- CORRECTIONS GLOBALES RESPONSIVE --- */
+
+/* Bouton hamburger (caché sur ordi) */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+/* --- MEDIA QUERIES (Écrans < 768px) --- */
+@media (max-width: 768px) {
+  
+  /* 1. Navigation Mobile */
+  .mobile-menu-btn {
+    display: block; /* On affiche le bouton */
+  }
+
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .menu {
+    display: none; /* On cache le menu par défaut */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    padding: 20px;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .menu.active {
+    display: flex; /* S'affiche quand on clique sur le bouton */
+  }
+
+  .submenu {
+    position: static; /* Le sous-menu ne flotte plus */
+    background: #333;
+    margin-top: 10px;
+  }
+
+  /* 2. Sections et Grilles */
+  .features {
+    grid-template-columns: 1fr; /* 1 colonne au lieu de 3 */
+    padding: 40px 20px;
+  }
+
+  .research-step {
+    flex-direction: column; /* Le texte et le numéro s'empilent */
+    gap: 10px;
+    padding: 20px;
+  }
+
+  .authors-grid {
+    gap: 40px; /* Moins d'espace entre les auteurs */
+    margin-top: 50px;
+  }
+
+  /* 3. Textes et Conteneurs */
+  .hero h1 {
+    font-size: 2.2rem; /* Titre plus petit sur mobile */
+  }
+
+  .page-content, .container, .page-section {
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
+  }
+
+  #map {
+    height: 300px; /* Carte plus petite */
+  }
+}
+@media (max-width: 768px) {
+  .navbar {
+    padding: 8px 15px;
+  }
+
+  .logo-img {
+    height: 40px; /* réduit le logo */
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    margin: 0;
+  }
+}

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Cold case féérique et préhistorique : Grotte de Châtelperron</title>
+  <link rel="icon" type="image/png" href="images/logo-dl.png">
+  <link rel="stylesheet" href="CSS/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html">
+       <img src="images/logo-dl.png" alt="Logo DL Archives" class="logo-img">
+      </a>
+
+    </div>
+<button class="mobile-menu-btn" aria-label="Ouvrir le menu">
+      <i class="fas fa-bars"></i>
+    </button>
+    <ul class="menu">
+      <li><a href="index.html">Accueil</a></li>
+      
+
+      <li class="dropdown">
+        <a href="synthese.html">Le cold case</a>
+        <ul class="submenu">
+          <li><a href="synthese.html#contexte">Contexte</a></li>
+          <li><a href="synthese.html#decouvertes">Découvertes</a></li>
+          <li><a href="synthese.html#debats">Débats scientifiques</a></li>
+        </ul>
+      </li>
+      <li><a href="carte.html">Carte interactive</a></li>
+      <li><a href="recherche.html">Méthodologie</a></li>
+      <li><a href="about.html">À propos</a></li>
+      <li><a href="sources.html">Sources</a></li>
+      <li><a href="glossaire.html">Glossaire</a></li>
+      <li><a href="miniarcheo.html">Mini archéologie</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section id="contexte" class="page-section">
+  <div class="container">
+    <h1 class="pioche-title">
+      <span class="section-icon bone">⛏️</span>
+      Contexte archéologique
+      <span class="section-icon bone">⛏️</span>
+    </h1>
+
+    <div class="content-card">
+      <h2>Localisation et Découverte</h2>
+      <p>
+        Située sur la commune de <strong>Châtelperron (Allier)</strong>, la Grotte des Fées est le site éponyme d'une culture charnière de la Préhistoire : le <strong>Châtelperronien</strong>. Niché dans la vallée de la Besbre, ce gisement a été révélé au milieu du XIXe siècle lors du creusement de la voie ferrée reliant le site aux carrières voisines.
+      </p>
+      
+      <figure class="illustration-fine">
+         <img src="images/gottechatelperron.png" alt="Description de l’image">
+        <figcaption> figure 1 : Vue des trois locus du gisement de la Grotte des Fées © R. Angevin 2019.</figcaption>
+         <p>
+        (Source : <a href="document/Entre les lignes_08_Châtelperron.pdf" target="_blank">ENTRE LES LIGNES</a>)
+      </p>
+      </figure>
+    </div>
+
+    <div class="content-card">
+      <h2>Un Horizon de Transition (-45 000 à -40 000 ans)</h2>
+      <p>
+        Le site occupe une place centrale dans les débats sur la transition entre le Paléolithique moyen et supérieur. Il témoigne de la présence des <strong>derniers Néandertaliens</strong> en Europe occidentale, à une époque où les premiers Humains Anatomiquement Modernes (Aurignaciens) commencent à s'installer.
+      </p>
+      <p>
+        Les datations radiocarbone placent l'occupation principale entre <strong>45 000 et 40 000 ans avant notre ère</strong>, faisant de Châtelperron un témoin direct de cette possible cohabitation ou succession culturelle.
+      </p>
+    </div>
+
+    <div class="content-card">
+      <h2>L'Industrie Lithique : Le "Fossile Directeur"</h2>
+      <p>
+        Le "fossile directeur" de ce site est la célèbre <strong>Pointe de Châtelperron</strong>. Il s'agit d'un couteau à dos courbe, obtenu par une retouche abrupte sur le bord d'une lame de silex. Cette innovation technique marque une rupture avec les méthodes précédentes et illustre une "modernité" comportementale souvent débattue chez Néandertal.
+      </p>
+      
+      <div class="artifact-container">
+        </div>
+    </div>
+
+    <div class="context-accordion" onclick="this.classList.toggle('open')">
+      <div class="context-header">
+        <span>🔍 Focus : Les fouilles historiques</span>
+        <span class="arrow-icon">▼</span>
+      </div>
+      <div class="context-body">
+        <p>
+          Les premières fouilles (Albert Poirrier vers 1848, puis Guillaume Bailleau) ont malheureusement souffert de méthodes anciennes, entraînant des doutes sur la <strong>stratigraphie</strong> du site. Ces mélanges de couches (interstratification) ont alimenté des décennies de controverses scientifiques sur la chronologie exacte des occupations.
+        </p>
+      </div>
+    </div>
+
+    <div class="artifact-container">
+     <div class="artifact-interaction-area">
+    
+     <div id="soundwave-scrubber" class="soundwave-container">
+      <div class="soundwave-bg"></div> <div class="soundwave-progress"></div> <div class="soundwave-handle"></div> </div>
+
+     <div class="artifact-flex">
+      <div class="scale-wrapper">
+        <div class="scale-bar"></div>
+         <div class="scale-markers">
+          <div class="scale-label">10 cm</div>
+          <div class="scale-label">5 cm</div>
+          <div class="scale-label">0 cm</div>
+         </div>
+      </div>
+
+      <div class="flint-visualization">
+        <img src="images/silex-brut.svg" alt="Lame de silex brute" class="flint-image flint-raw">
+        
+        <img src="images/silex-final.svg" alt="Pointe de Châtelperron finale" class="flint-image flint-finished">
+      </div>
+    </div>
+
+    <p id="artifact-caption">Passez votre souris sur la ligne pour tailler la pointe.</p>
+  </div>
+ </div>
+  </div>
+</section>
+
+
+
+
+<section id="decouvertes" class="page-section">
+  <div class="container">
+
+    <h1 class="bone-title">
+      <span class="bone bone-left">🦴</span>
+      Découvertes
+      <span class="bone bone-right">🦴</span>
+    </h1>
+
+    <div class="content-card">
+      <h2>L’Industrie lithique : L’innovation Châtelperronienne</h2>
+      <p>
+        Les fouilles ont mis au jour une quantité impressionnante de vestiges en silex. La pièce maîtresse est la <strong>Pointe de Châtelperron</strong>. Contrairement aux outils moustériens plus anciens, ces pointes sont façonnées sur des lames allongées avec un dos aminci par des retouches abruptes.
+      </p>
+      <p>
+        Cette technique permet d'obtenir un tranchant extrêmement efficace tout en facilitant l'emmanchement sur une hampe en bois ou en os.
+      </p>
+
+      <img src="images/pointe.png" alt="Description de l’image"> figure 2 : Pointes de Châtelperron. Fouilles Bailleau (1867-1870).  © GrandPalaisRmn (musée d’Archéologie nationale), Jean‑Gilles Berizzi. 
+      
+      <p>
+        (Source : Archéologia, n°650. "Châtelperron ENQUÊTE SUR UN ILLUSTRE INCONNU")
+      </p>
+      <div class="info-box">
+        <strong>Le saviez-vous ?</strong> On a retrouvé plus de 150 de ces pointes dans les collections Bailleau, témoignant d'une véritable "chaîne opératoire" spécialisée sur le site.
+      </div>
+    </div>
+
+    <div class="content-card">
+      <h2>Les parures et l’art mobilier : Un débat de 40 000 ans</h2>
+      <p>
+        Bien que le Châtelperronien tire son nom du site de Châtelperron, les objets de parure les plus spectaculaires (dents percées, pigments) proviennent principalement d’autres sites, notamment la Grotte du Renne. Ces découvertes sont néanmoins attribuées à la même culture archéologique.
+        L'une des découvertes les plus fascinantes attribuées au Châtelperronien concerne les objets de parure. Des <strong>dents de loup, de renard et de marmotte percées</strong> ou rainurées ont été retrouvées, suggérant qu'elles étaient portées en pendeloques.
+      </p>
+      <img src="images/MEH_29-04-2012_12-08-38_2552x1615.JPG" alt="Description de l’image">
+      figure 3 : Réplique d'un ornement fait en os et en dents de renard Grotte du Renne, Arcy-sur-Cure (France)
+      <p>
+      (Source : <a href="https://commons.wikimedia.org/w/index.php?search=Ch%C3%A2telperronian+ornaments&title=Special%3AMediaSearch&type=image"target="_blank">commons.wikimedia.org</a>)
+     </p>
+      <p>
+        La présence de ces objets, ainsi que de l'utilisation de <strong>pigments (ocre rouge)</strong>, pose la question de la pensée symbolique : ces objets étaient-ils des inventions néandertaliennes ou le résultat d'échanges avec les premiers hommes modernes ?
+      </p>
+    </div>
+
+    <div class="content-card">
+      <h2>Faune et Environnement</h2>
+      <p>
+        L'étude des restes osseux (archéozoologie) révèle que les occupants de la grotte chassaient principalement le <strong>Renne</strong>, le <strong>Cheval</strong> et le <strong>Bison</strong>. L'abondance de ces espèces indique un climat froid et un paysage de steppe ouverte lors de l'occupation.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<section id="debats" class="page-section">
+  <div class="container">
+    
+    <h1 class="book-title">
+      <span class="section-icon bone">📖</span>
+      Débats scientifiques
+      <span class="section-icon bone">📖</span>
+    </h1>
+
+    <div class="content-card">
+      <h2>L'auteur de la culture : Qui a fabriqué quoi ?</h2>
+      <p>
+        Pendant longtemps, le Paléolithique supérieur (période des innovations technologiques) a été attribué exclusivement à l'Homme moderne (<em>Homo sapiens</em>). Cependant, la découverte de restes néandertaliens associés à des outils châtelperroniens sur d'autres sites (comme Arcy-sur-Cure) a provoqué un séisme archéologique.
+      </p>
+      <div class="theory-grid">
+        <div class="theory-item">
+          <strong>L'Acculturation</strong>
+          <p>Néandertal aurait imité les techniques des Hommes modernes arrivant en Europe.</p>
+        </div>
+        <div class="theory-item">
+          <strong>L'Évolution Indépendante</strong>
+          <p>Néandertal aurait développé ces innovations (parures, lames) de manière autonome, prouvant une complexité cognitive égale à la nôtre.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-card">
+      <h2>Le problème de l'Interstratification</h2>
+      <p>
+        Dans les années 2000, certains chercheurs ont suggéré que les couches archéologiques de la Grotte des Fées étaient mélangées (interstratifiées). Selon cette hypothèse, les objets "modernes" seraient tombés dans les couches "anciennes" à cause de perturbations géologiques ou de méthodes de fouilles imprécises au XIXe siècle.
+      </p>
+      
+      
+
+      <p>
+        C'est ici que le terme <strong>"Cold Case"</strong> prend tout son sens : les nouvelles analyses et datations au carbone 14 tentent de démêler ce puzzle pour savoir si les deux espèces ont réellement cohabité dans cette vallée.
+      </p>
+    </div>
+
+    <div class="content-card shadow-gold">
+      <h2>Conclusion de l'enquête</h2>
+      <p>
+        Aujourd'hui, si le débat reste ouvert, la majorité des chercheurs s'accorde à dire que le Châtelperronien est bien l'œuvre des <strong>derniers Néandertaliens</strong>. La Grotte des Fées reste le symbole de cette humanité disparue qui, aux portes de son extinction, manifestait un éclat culturel et symbolique fascinant.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="page-section sources-section">
+  <div class="container">
+    <h2>Sources numériques</h2>
+
+    <ul class="sources-list">
+
+      <li>
+        Article Persée – Henri Delporte, « Les fouilles des grottes paléolithiques de Châtelperron (Allier) », 1955.<br>
+        <a href="https://www.persee.fr/doc/galia_0016-4119_1955_num_13_1_1425" target="_blank">https://www.persee.fr</a>
+        <span class="source-comment">
+          Source académique essentielle pour comprendre les enjeux méthodologiques
+          et chronologiques du site de Châtelperron.
+        </span>
+      </li>
+
+      <li>
+  ANGEVIN R. et al. (2024), « Un nouveau locus paléolithique dans le gisement de la Grotte des Fées à Châtelperron (Allier) », <em>Bulletin de la Société préhistorique française</em>, 121 (4).<br>
+  <span class="source-comment">
+    Rapport de fouilles récentes (2021-2024) confirmant de nouveaux secteurs stratigraphiques et réévaluant le potentiel archéologique du site.
+  </span>
+</li>
+
+<li>
+  ZILHÃO J. et al. (2006), « Analysis of Aurignacian interstratification at the Châtelperronian-type site and implications for the behavioral modernity of Neandertals », <em>PNAS</em>.<br>
+  <span class="source-comment">
+    Étude critique majeure démontrant que l'interstratification entre Néandertaliens et Sapiens à Châtelperron est une illusion due aux mélanges géologiques.
+  </span>
+</li>
+
+<li>
+  ANGEVIN R., LACOSTE E., PACAUD F. (2021), « La grotte des Fées de Châtelperron : 180 ans de recherches et de découvertes », <em>Revue archéologique de l'Allier</em>.<br>
+  <span class="source-comment">
+    Synthèse historique complète retraçant l'historique des fouilles depuis 1840 et l'évolution des interprétations du gisement.
+  </span>
+</li>
+
+<li>
+  PELLARD S., « À propos d'un poinçon provenant de la grotte des Fées à Châtelperron », <em>Persée / Revue archéologique du Centre de la France</em>.<br>
+  <span class="source-comment">
+    Analyse d'un outil en os spécifique (poinçon) témoignant de l'industrie osseuse et des capacités techniques attribuées au Châtelperronien.
+  </span>
+</li>
+
+<li>
+  BIGOT B. (1992), « Châtelperron Allier », <em>G&G 123</em>, p. 16-18.<br>
+  <span class="source-comment">
+    Note de terrain sur la géomorphologie du site et les premières observations sur les cavités calcaires.
+  </span>
+</li>
+
+
+<li>
+  Société Préhistorique Française (SPF) – <em>Gisement paléolithique de la Grotte des Fées</em>,  
+  <a href="https://www.prehistoire.org" target="_blank">https://www.prehistoire.org</a><br>
+  <span class="source-comment">
+    Documentation technique sur la protection du site et les communications scientifiques liées au Châtelperronien.
+  </span>
+</li>
+    </ul>
+
+    <p class="sources-link">
+      Webographie complète disponible sur la page  
+      <a href="sources.html">Sources</a>.
+    </p>
+  </div>
+</section>
+
+
+<footer>
+  <p>Licence 2 Archéologie – Paris 1 Panthéon-Sorbonne</p>
+</footer>
+
+<script>
+const menuBtn = document.querySelector(".mobile-menu-btn");
+const menu = document.querySelector(".menu");
+
+menuBtn.addEventListener("click", () => {
+  menu.classList.toggle("active");
+});
+</script>
+<script src="js/slider.js"></script>
+</body>
+</html>

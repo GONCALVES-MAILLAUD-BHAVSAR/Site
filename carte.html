@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Carte interactive – Grotte de Châtelperron</title>
+  <link rel="icon" type="image/png" href="images/logo-dl.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="CSS/style.css">
+
+  <!-- Leaflet -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+</head>
+
+<body>
+
+  <div id="map-transition-overlay">
+    <div class="scan-grid"></div>
+    <div class="scan-bar"></div>
+    <div class="scan-text">Initialisation du relevé SIG...</div>
+  </div>
+
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html">
+       <img src="images/logo-dl.png" alt="Logo DL Archives" class="logo-img">
+      </a>
+
+    </div>
+<button class="mobile-menu-btn" aria-label="Ouvrir le menu">
+      <i class="fas fa-bars"></i>
+    </button>
+    <ul class="menu">
+      <li><a href="index.html">Accueil</a></li>
+      
+
+      <li class="dropdown">
+        <a href="synthese.html">Le cold case</a>
+        <ul class="submenu">
+          <li><a href="synthese.html#contexte">Contexte</a></li>
+          <li><a href="synthese.html#decouvertes">Découvertes</a></li>
+          <li><a href="synthese.html#debats">Débats scientifiques</a></li>
+        </ul>
+      </li>
+      <li><a href="carte.html">Carte interactive</a></li>
+      <li><a href="recherche.html">Méthodologie</a></li>
+      <li><a href="about.html">À propos</a></li>
+      <li><a href="sources.html">Sources</a></li>
+      <li><a href="glossaire.html">Glossaire</a></li>
+      <li><a href="miniarcheo.html">Mini archéologie</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="page-content">
+
+  <section class="map-section">
+    <h1>Carte interactive des sites préhistoriques</h1>
+
+    <p>
+      Cette carte permet de situer la grotte de Châtelperron et d’autres sites
+      majeurs associés aux débats sur le Châtelperronien et les populations néandertaliennes.
+    </p>
+
+    <div id="map"></div>
+
+    <p class="map-caption">
+      Cliquez sur le marqueur pour découvrir le site.
+    </p>
+  </section>
+  
+<div style="margin-top:20px;">
+  <p><span style="color:gold;">●</span> Châtelperron (Grotte des fées)</p>
+  <p><span style="color:red;">●</span> Châtelperronien</p>
+  <p><span style="color:blue;">●</span> Néandertal</p>
+  <p><span style="color:green;">●</span> Homo sapiens</p>
+</div>
+</main>
+
+<footer>
+  <p>Licence 2 Archéologie – Paris 1 Panthéon-Sorbonne</p>
+</footer>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="js/map.js"></script> 
+<script src="js/slider.js"></script>
+<script>
+const menuBtn = document.querySelector(".mobile-menu-btn");
+const menu = document.querySelector(".menu");
+
+menuBtn.addEventListener("click", () => {
+  menu.classList.toggle("active");
+});
+</script>
+</body>
+</html>
